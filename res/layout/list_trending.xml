@@ -11,13 +11,13 @@
           android:layout_height="200dp"
           android:src="@drawable/ayocanc" />
 
-   <!-- <TextView
+	  <TextView
         android:id="@+id/TrendingtextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/TrendingTextViewtitle"
         android:layout_below="@+id/TrendingTextViewtitle"
-        android:text="HEALTH/MEDICAL" /> --> 
+        android:text="HEALTH/MEDICAL" />
 
     <TextView
         android:id="@+id/TrendingTextViewtitle"

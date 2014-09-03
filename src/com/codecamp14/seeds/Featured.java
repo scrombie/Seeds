@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class Featured extends Fragment {
-	
-	public Featured() {
+	//commented by valentine;
+/*	public Featured() {
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -18,5 +18,6 @@ public class Featured extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         
         return rootView;
-	}
+	}*/
+	
 }

@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		/*
 		ParseUser currentUser = ParseUser.getCurrentUser();
 		
 		if(currentUser == null){
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 		startActivity(i);
 		}else{
 			Log.i(TAG, currentUser.getUsername());
-		}
+		}*/
 		//getActionBar().getThemedContext().setTheme(resid);
 
 		mTitle = mDrawerTitle = getTitle();

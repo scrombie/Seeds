@@ -6,6 +6,7 @@ import java.util.List;
 import com.codecamp14.seeds.models.Trend;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,7 @@ public class Trending extends Fragment {
  
         View rootView = inflater.inflate(R.layout.fragment_trending, container, false);
         Trendlist = (ListView) rootView.findViewById(R.id.TrenidnglistView1);
-		trendHomeList();
+		trendHomeList(trending);
 		trendListView();
 		
 		Trendlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -72,21 +73,21 @@ public class Trending extends Fragment {
 		trending.add(new Trend(getTag(), getTag(), 0));
 	}
 
-	private void trendHomeList() {
+	private void trendHomeList(List<Trend> tren) {
 		// TODO Auto-generated method stub
-		ArrayAdapter<Trend> adapter = new TrendingListAdapter();
+		TrendingListAdapter adapter = new TrendingListAdapter(getActivity(),R.layout.list_trending,tren );
 //		String[] a= {"a","b","c"};
 //		ArrayAdapter<String> array = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, a);
 		Trendlist.setAdapter(adapter);
 	}
 	private class TrendingListAdapter extends ArrayAdapter<Trend> {
-
-		public TrendingListAdapter() {
-			super(getActivity(), R.layout.list_trending, trending);
-			
+		private List<Trend> data;
+		public TrendingListAdapter(Context context, int resource, List<Trend> objects) {
+			super(context, resource, objects);
+			this.data=objects;
 			// TODO Auto-generated constructor stub
 		}
-}
+
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		View itemView = convertView;
@@ -97,15 +98,16 @@ public class Trending extends Fragment {
 		
 		Trendingimg = (ImageView) itemView.findViewById(R.id.TrendingimageView);
 		Trendingtv = (TextView) itemView.findViewById(R.id.TrendingTextViewtitle);
-		//Trendingcat = (TextView) itemView.findViewById(R.id.TrendingtextView);
+		Trendingcat = (TextView) itemView.findViewById(R.id.TrendingtextView);
 		
 		
-		Trend setStuff = trending.get(position);
+		Trend setStuff = this.data.get(position);
 		
 		Trendingimg.setImageResource(setStuff.getTrendingPic());
 
 		Trendingtv.setText(setStuff.getTrendingTitle());
 		Trendingcat.setText(setStuff.getTrendingCat());
 		return itemView;
+	}
 	}
 }
