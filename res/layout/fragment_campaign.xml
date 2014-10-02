@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- Title Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Title"
+                android:textColor="@color/text_campaign"
+                android:textSize="17dip" />
+
+            <!-- Input Name -->
+
+            <EditText
+                android:id="@+id/inputName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="Title of your Campaign"
+                android:singleLine="true" />
+
+            <!-- Price Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Funding Goal"
+                android:textColor="@color/text_campaign"
+                android:textSize="17dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="₦" />
+
+                <!-- Input Price -->
+
+                <EditText
+                    android:id="@+id/inputAmount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:hint="Amount to Raise ₦(without the comma)"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <!-- Goal Duration -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/funding_duration"
+                android:textColor="@color/text_campaign"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <!-- Description Label -->
+
+                <TextView
+                    android:id="@+id/signUP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="@string/number_of_days_" />
+
+                <EditText
+                    android:id="@+id/numOfDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:ems="10"
+                    android:hint="@string/days"
+                    android:inputType="number" >
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+            <!-- Category Spinner -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:text="Category"
+                android:textColor="@color/text_campaign"
+                android:textSize="17sp" />
+
+            <Spinner
+                android:id="@+id/categorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/selectedPath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selected_path" />
+
+            <Button
+                android:id="@+id/imageload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_image" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/details"
+                android:textColor="@color/text_campaign"
+                android:textSize="17sp" />
+
+            <!-- Input description -->
+
+            <EditText
+                android:id="@+id/inputArticle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="top"
+                android:hint="@string/drop_details_for_your_campaign"
+                android:lines="10" />
+
+            <!-- Button Create Product -->
+
+            <Button
+                android:id="@+id/btnStartCampaign"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/list_background_pressed"
+                android:bottomLeftRadius="10dp"
+                android:bottomRightRadius="10dp"
+                android:text="@string/start_campaign"
+                android:topLeftRadius="10dp"
+                android:topRightRadius="10dp">
+            </Button>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
