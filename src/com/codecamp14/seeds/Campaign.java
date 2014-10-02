@@ -23,12 +23,21 @@ public class Campaign {
 	protected int goal;
 	protected int totalDonations;
 	protected int totalDonors;
+<<<<<<< HEAD
 	protected String imageUrl;
 		public String getImageUrl() {
 		return imageUrl;
 	}
 	public void setImageUrl(String image) {
 		this.imageUrl = image;
+=======
+	protected String image;
+		public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 	}
 		Campaign(JSONObject json){
 			try{
@@ -41,7 +50,11 @@ public class Campaign {
 				this.goalDuration=json.getString("goal_duration");
 				this.totalDonations=json.getInt("total_donations");
 				this.totalDonors=json.getInt("total_donors");
+<<<<<<< HEAD
 				this.imageUrl=json.getString("photos");
+=======
+//				this.image=json.getString("image");
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 				}catch(Exception m){
 					m.printStackTrace();
 				}

@@ -44,6 +44,7 @@
         <item>OTHERS</item>
         
     </string-array>
+<<<<<<< HEAD
         <string name="coffee_however_you_like_it">Coffee, However You Like It</string>
         <string name="add_image">Add Image</string>
         <string name="details">Details</string>
@@ -56,5 +57,7 @@
         <string name="title">Title</string>
         <string name="thumnail_of_campaign">Thumnail of campaign</string>
         <string name="technology">TECHNOLOGY</string>
+=======
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
 </resources>

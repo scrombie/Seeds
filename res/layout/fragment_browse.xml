@@ -14,8 +14,13 @@
         android:id="@+id/browseList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+<<<<<<< HEAD
         android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
+=======
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
         android:layout_marginTop="15dp"
         android:numColumns="2" >
     </GridView>

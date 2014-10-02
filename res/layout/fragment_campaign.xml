@@ -74,9 +74,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"
+<<<<<<< HEAD
                 android:text="@string/funding_duration"
                 android:textColor="@color/text_campaign"
                 android:textSize="17sp" />
+=======
+                android:text="Funding Duration"
+                android:textColor="@color/text_campaign"
+                android:textSize="17dip" />
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -92,7 +98,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.8"
+<<<<<<< HEAD
                     android:text="@string/number_of_days_" />
+=======
+                    android:text="Number of Days:" />
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
                 <EditText
                     android:id="@+id/numOfDays"
@@ -100,7 +110,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
                     android:ems="10"
+<<<<<<< HEAD
                     android:hint="@string/days"
+=======
+                    android:hint="Days"
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
                     android:inputType="number" >
 
                     <requestFocus />
@@ -114,7 +128,11 @@
                 android:layout_marginBottom="10dp"
                 android:text="Category"
                 android:textColor="@color/text_campaign"
+<<<<<<< HEAD
                 android:textSize="17sp" />
+=======
+                android:textSize="17dip" />
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
             <Spinner
                 android:id="@+id/categorySpinner"
@@ -124,6 +142,7 @@
                 android:layout_marginBottom="10dp" />
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/selectedPath"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,6 +160,13 @@
                 android:text="@string/details"
                 android:textColor="@color/text_campaign"
                 android:textSize="17sp" />
+=======
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Article"
+                android:textColor="@color/text_campaign"
+                android:textSize="17dip" />
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
             <!-- Input description -->
 
@@ -150,7 +176,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="top"
+<<<<<<< HEAD
                 android:hint="@string/drop_details_for_your_campaign"
+=======
+                android:hint="Drop an Article for your Campaign"
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
                 android:lines="10" />
 
             <!-- Button Create Product -->
@@ -162,7 +192,11 @@
                 android:background="@color/list_background_pressed"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
+<<<<<<< HEAD
                 android:text="@string/start_campaign"
+=======
+                android:text="Start Campaign"
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
                 android:topLeftRadius="10dp"
                 android:topRightRadius="10dp">
             </Button>

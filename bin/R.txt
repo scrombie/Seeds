@@ -265,15 +265,26 @@ int drawable naira 0x7f020067
 int drawable orange 0x7f020068
 int drawable seeds 0x7f020069
 int drawable tomato 0x7f02006a
+<<<<<<< HEAD
 int id HomelistView 0x7f070054
+=======
+int id HomelistView 0x7f070052
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id SignUPbutton 0x7f070046
 int id SignUPemailField 0x7f070045
 int id SignUPpasswordField 0x7f070044
 int id SignUpusernameField 0x7f070043
+<<<<<<< HEAD
 int id TrendingTextViewtitle 0x7f07005c
 int id TrendingimageView 0x7f07005a
 int id TrendingtextView 0x7f07005b
 int id TrenidnglistView1 0x7f070055
+=======
+int id TrendingTextViewtitle 0x7f07005a
+int id TrendingimageView 0x7f070058
+int id TrendingtextView 0x7f070059
+int id TrenidnglistView1 0x7f070053
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id action_bar 0x7f07001c
 int id action_bar_activity_content 0x7f070015
 int id action_bar_container 0x7f07001b
@@ -285,15 +296,24 @@ int id action_context_bar 0x7f07001d
 int id action_menu_divider 0x7f070016
 int id action_menu_presenter 0x7f070017
 int id action_mode_close_button 0x7f070024
+<<<<<<< HEAD
 int id action_settings 0x7f07005d
+=======
+int id action_settings 0x7f07005b
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id activity_chooser_view_content 0x7f070025
 int id always 0x7f07000b
 int id beginning 0x7f070011
 int id browseList 0x7f070048
+<<<<<<< HEAD
 int id btnStartCampaign 0x7f070050
 int id button1 0x7f07003e
 int id campaignView 0x7f070051
 int id category 0x7f070059
+=======
+int id btnStartCampaign 0x7f07004e
+int id button1 0x7f07003e
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id categorySpinner 0x7f07004c
 int id checkbox 0x7f07002d
 int id collapseActionView 0x7f07000d
@@ -307,17 +327,27 @@ int id edit_query 0x7f070030
 int id end 0x7f070013
 int id expand_activities_button 0x7f070026
 int id expanded_menu 0x7f07002c
+<<<<<<< HEAD
 int id featList 0x7f070053
+=======
+int id featList 0x7f070051
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id frame_container 0x7f070041
 int id home 0x7f070014
 int id homeAsUp 0x7f070005
 int id icon 0x7f07002a
 int id ifRoom 0x7f07000a
 int id image 0x7f070027
+<<<<<<< HEAD
 int id imageView1 0x7f070058
 int id imageload 0x7f07004e
 int id inputAmount 0x7f07004a
 int id inputArticle 0x7f07004f
+=======
+int id imageView1 0x7f070056
+int id inputAmount 0x7f07004a
+int id inputArticle 0x7f07004d
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id inputName 0x7f070049
 int id listMode 0x7f070001
 int id list_item 0x7f070029
@@ -341,7 +371,10 @@ int id search_mag_icon 0x7f070035
 int id search_plate 0x7f070036
 int id search_src_text 0x7f070037
 int id search_voice_btn 0x7f07003b
+<<<<<<< HEAD
 int id selectedPath 0x7f07004d
+=======
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id shortcut 0x7f07002e
 int id showCustom 0x7f070007
 int id showHome 0x7f070004
@@ -350,11 +383,21 @@ int id signUP 0x7f07003f
 int id split_action_bar 0x7f07001e
 int id submit_area 0x7f070039
 int id tabMode 0x7f070002
+<<<<<<< HEAD
 int id textViewArts 0x7f070056
 int id textViewDesc 0x7f070057
 int id title 0x7f07002b
 int id top_action_bar 0x7f070020
 int id txtLabel 0x7f070052
+=======
+int id textView2 0x7f070057
+int id textViewArts 0x7f070054
+int id textViewDesc 0x7f070055
+int id title 0x7f07002b
+int id top_action_bar 0x7f070020
+int id tv 0x7f070050
+int id txtLabel 0x7f07004f
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int id up 0x7f070021
 int id useLogo 0x7f070003
 int id usernameField 0x7f07003c
@@ -391,6 +434,7 @@ int layout customlist 0x7f03001b
 int layout drawer_list_item 0x7f03001c
 int layout fragment_browse 0x7f03001d
 int layout fragment_campaign 0x7f03001e
+<<<<<<< HEAD
 int layout fragment_campaignview 0x7f03001f
 int layout fragment_community 0x7f030020
 int layout fragment_featured 0x7f030021
@@ -402,6 +446,18 @@ int layout list_browse 0x7f030026
 int layout list_item 0x7f030027
 int layout list_trending 0x7f030028
 int layout support_simple_spinner_dropdown_item 0x7f030029
+=======
+int layout fragment_community 0x7f03001f
+int layout fragment_featured 0x7f030020
+int layout fragment_home 0x7f030021
+int layout fragment_photos 0x7f030022
+int layout fragment_trending 0x7f030023
+int layout fragment_whats_hot 0x7f030024
+int layout list_browse 0x7f030025
+int layout list_item 0x7f030026
+int layout list_trending 0x7f030027
+int layout support_simple_spinner_dropdown_item 0x7f030028
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int menu login 0x7f0d0000
 int menu main 0x7f0d0001
 int menu sign_up 0x7f0d0002
@@ -419,6 +475,7 @@ int string abc_searchview_description_voice 0x7f050009
 int string abc_shareactionprovider_share_with 0x7f05000d
 int string abc_shareactionprovider_share_with_application 0x7f05000c
 int string action_settings 0x7f05000e
+<<<<<<< HEAD
 int string add_image 0x7f050017
 int string app_name 0x7f050000
 int string coffee_however_you_like_it 0x7f050016
@@ -437,6 +494,14 @@ int string start_campaign 0x7f05001a
 int string technology 0x7f050021
 int string thumnail_of_campaign 0x7f050020
 int string title 0x7f05001f
+=======
+int string app_name 0x7f050000
+int string desc_list_item_icon 0x7f050012
+int string drawer_close 0x7f050011
+int string drawer_open 0x7f050010
+int string hello_world 0x7f05000f
+int string menu_logout 0x7f050015
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int string title_activity_login 0x7f050013
 int string title_activity_sign_up 0x7f050014
 int style AppBaseTheme 0x7f060000
@@ -653,7 +718,11 @@ int styleable MenuItem_android_title 7
 int styleable MenuItem_android_titleCondensed 8
 int styleable MenuItem_android_visible 4
 int styleable MenuItem_showAsAction 13
+<<<<<<< HEAD
 int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x01010435 }
+=======
+int[] styleable MenuView { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x0101040c }
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 int styleable MenuView_android_headerBackground 4
 int styleable MenuView_android_horizontalDivider 2
 int styleable MenuView_android_itemBackground 5

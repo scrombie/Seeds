@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+<<<<<<< HEAD
 import android.app.FragmentTransaction;
+=======
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -214,10 +217,15 @@ public class MainActivity extends Activity {
 
 		if (fragment != null) {
 			FragmentManager fragmentManager = getFragmentManager();
+<<<<<<< HEAD
 			FragmentTransaction trans=fragmentManager.beginTransaction();
 					trans.replace(R.id.frame_container, fragment).addToBackStack(null);
 					setTitle(navMenuTitles[position]);
 					trans.commit();
+=======
+			fragmentManager.beginTransaction()
+					.replace(R.id.frame_container, fragment).commit();
+>>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
 			// update selected item and title, then close the drawer
 			mDrawerList.setItemChecked(position, true);
