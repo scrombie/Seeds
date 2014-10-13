@@ -343,11 +343,7 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f030015;
 		public static final int abc_search_view = 0x7f030016;
 		public static final int abc_simple_decor = 0x7f030017;
-<<<<<<< HEAD
-		public static final int support_simple_spinner_dropdown_item = 0x7f030029;
-=======
-		public static final int support_simple_spinner_dropdown_item = 0x7f030028;
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+		public static final int support_simple_spinner_dropdown_item = 0x7f03002e;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f050002;
@@ -579,11 +575,7 @@ public final class R {
 		public static final int MenuItem_android_titleCondensed = 8;
 		public static final int MenuItem_android_visible = 4;
 		public static final int MenuItem_showAsAction = 13;
-<<<<<<< HEAD
 		public static final int[] MenuView = { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x01010435 };
-=======
-		public static final int[] MenuView = { 0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 0x0101012f, 0x01010130, 0x01010131, 0x0101040c };
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 		public static final int MenuView_android_headerBackground = 4;
 		public static final int MenuView_android_horizontalDivider = 2;
 		public static final int MenuView_android_itemBackground = 5;

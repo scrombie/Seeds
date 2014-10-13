@@ -1,0 +1,100 @@
+﻿Merge branch 'vals' of https://github.com/maxdeviper/Seeds into vals
+
+Conflicts:
+	bin/R.txt
+	bin/Seeds.apk
+	bin/classes.dex
+	bin/classes/android/support/v7/appcompat/R$layout.class
+	bin/classes/android/support/v7/appcompat/R$styleable.class
+	bin/classes/com/codecamp14/seeds/BrowseProject$MyBrowseAdapter.class
+	bin/classes/com/codecamp14/seeds/Campaign.class
+	bin/classes/com/codecamp14/seeds/CampaignFragment$1.class
+	bin/classes/com/codecamp14/seeds/CampaignFragment$StartCampaign.class
+	bin/classes/com/codecamp14/seeds/CampaignFragment.class
+	bin/classes/com/codecamp14/seeds/Featured.class
+	bin/classes/com/codecamp14/seeds/HomeFragment$MyListAdapter.class
+	bin/classes/com/codecamp14/seeds/HomeFragment.class
+	bin/classes/com/codecamp14/seeds/HowitWorks.class
+	bin/classes/com/codecamp14/seeds/MainActivity$1.class
+	bin/classes/com/codecamp14/seeds/MainActivity$SlideMenuClickListener.class
+	bin/classes/com/codecamp14/seeds/MainActivity.class
+	bin/classes/com/codecamp14/seeds/R$id.class
+	bin/classes/com/codecamp14/seeds/R$integer.class
+	bin/classes/com/codecamp14/seeds/R$layout.class
+	bin/classes/com/codecamp14/seeds/R$menu.class
+	bin/classes/com/codecamp14/seeds/R$string.class
+	bin/classes/com/codecamp14/seeds/R$style.class
+	bin/classes/com/codecamp14/seeds/R$styleable.class
+	bin/classes/com/codecamp14/seeds/Settings.class
+	bin/classes/com/codecamp14/seeds/Trending$TrendingListAdapter.class
+	bin/classes/com/codecamp14/seeds/Trending.class
+	bin/classes/com/codecamp14/seeds/UrlLink.class
+	bin/classes/com/codecamp14/seeds/login/LoginActivity.class
+	bin/classes/com/codecamp14/seeds/login/SignUpActivity.class
+	bin/dexedLibs/Parse-1.5.1-37abd3d09a3b93da63bae156f43aa407.jar
+	bin/dexedLibs/android-support-v4-e88d70e67641fe046835a5db4c2e6538.jar
+	bin/dexedLibs/android-support-v7-appcompat-ac47106af83ae3b57da652f43a86eb74.jar
+	bin/dexedLibs/appcompat_v7-f77812f555303009734abbe42e40358e.jar
+	bin/dexedLibs/codecampmisclibrary-e0803f98f9db5de8dd2a9159235dd6d2.jar
+	bin/resources.ap_
+	gen/android/support/v7/appcompat/R.java
+	gen/com/codecamp14/seeds/R.java
+	project.properties
+	res/layout/fragment_browse.xml
+	res/layout/fragment_campaign.xml
+	res/layout/fragment_featured.xml
+	res/layout/list_item.xml
+	res/layout/list_trending.xml
+	res/values/strings.xml
+	src/com/codecamp14/seeds/Campaign.java
+	src/com/codecamp14/seeds/CampaignFragment.java
+	src/com/codecamp14/seeds/Featured.java
+	src/com/codecamp14/seeds/HomeFragment.java
+	src/com/codecamp14/seeds/MainActivity.java
+	src/com/codecamp14/seeds/UrlLink.java
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch vals
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   README.md
+#	modified:   bin/R.txt
+#	new file:   bin/dexedLibs/Parse-1.5.1-4faee928c78db3f276b4dcc248c14065.jar
+#	new file:   bin/dexedLibs/android-support-v4-4808574685633955f71330b5e35c1947.jar
+#	new file:   bin/dexedLibs/android-support-v7-appcompat-f3fab4df77a1b8b0dc2f8e8d9723d506.jar
+#	new file:   bin/dexedLibs/appcompat_v7-3a813faf56643a406c149f9c58129921.jar
+#	new file:   bin/res/crunch/drawable-hdpi/ic_category.png
+#	new file:   bin/res/crunch/drawable-hdpi/ic_featured.png
+#	new file:   bin/res/crunch/drawable-hdpi/ic_howitworks.png
+#	new file:   bin/res/crunch/drawable-hdpi/ic_start.png
+#	new file:   bin/res/crunch/drawable-hdpi/ic_trending.png
+#	modified:   gen/android/support/v7/appcompat/R.java
+#	modified:   gen/com/codecamp14/seeds/R.java
+#	modified:   project.properties
+#	new file:   res/drawable-hdpi/ic_category.png
+#	new file:   res/drawable-hdpi/ic_featured.png
+#	new file:   res/drawable-hdpi/ic_howitworks.png
+#	new file:   res/drawable-hdpi/ic_start.png
+#	new file:   res/drawable-hdpi/ic_trending.png
+#	modified:   res/layout/fragment_browse.xml
+#	modified:   res/layout/fragment_campaign.xml
+#	modified:   res/layout/fragment_featured.xml
+#	modified:   res/layout/list_item.xml
+#	modified:   res/layout/list_trending.xml
+#	modified:   res/values/strings.xml
+#	modified:   src/com/codecamp14/seeds/Campaign.java
+#	modified:   src/com/codecamp14/seeds/CampaignFragment.java
+#	modified:   src/com/codecamp14/seeds/Featured.java
+#	modified:   src/com/codecamp14/seeds/HomeFragment.java
+#	modified:   src/com/codecamp14/seeds/MainActivity.java
+#	modified:   src/com/codecamp14/seeds/UrlLink.java
+#
+

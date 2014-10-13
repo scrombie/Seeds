@@ -25,11 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-<<<<<<< HEAD
+
         android:text="@string/coffee_however_you_like_it"
-=======
-        android:text="Coffee, However You Like It"
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#000000" />
 

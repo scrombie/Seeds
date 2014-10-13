@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //
 package com.codecamp14.seeds;
 
@@ -21,27 +21,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-=======
-package com.codecamp14.seeds;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.codecamp.libs.RestClient;
-import com.codecamp.libs.RestClient.RequestMethod;
-
-import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Bundle;
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,17 +30,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-<<<<<<< HEAD
+
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codecamp.libs.RestClient;
 import com.codecamp.libs.RestClient.RequestMethod;
 
-=======
-import android.widget.Toast;
 
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 public class CampaignFragment extends Fragment {
 	/*{
 	"id": "1",
@@ -74,7 +51,7 @@ public class CampaignFragment extends Fragment {
 	"total_donors": "0"
 	},*/
 
-<<<<<<< HEAD
+
 	//	JSONParser jsonParser = new JSONParser();
 	EditText inputName, inputAmount, numOfDays, inputArticle;
 	Button btnStartCampaign,imageload;
@@ -91,19 +68,7 @@ public class CampaignFragment extends Fragment {
 	private static final String TAG_SUCCESS = "response";
 
 
-=======
-	JSONParser jsonParser = new JSONParser();
-	EditText inputName, inputAmount, numOfDays, inputArticle;
-	Button btnStartCampaign;
-	ProgressDialog pDialog;
 
-	// url to create new product
-//	private static String url_create_campaign = "http://www.etrademanager.com/connect/create_product.php";
-//	commented by val
-//	private static final String TAG_SUCCESS = "success";
-	private static final String TAG_SUCCESS = "response";
-
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 	public CampaignFragment() {
 	}
 
@@ -127,7 +92,7 @@ public class CampaignFragment extends Fragment {
 		inputAmount = (EditText) rootView.findViewById(R.id.inputAmount);
 		numOfDays = (EditText) rootView.findViewById(R.id.numOfDays);
 		inputArticle = (EditText) rootView.findViewById(R.id.inputArticle);
-<<<<<<< HEAD
+
 		selectedPathView=(TextView)rootView.findViewById(R.id.selectedPath);
 
 		imageload=(Button)rootView.findViewById(R.id.imageload);
@@ -141,9 +106,7 @@ public class CampaignFragment extends Fragment {
 
 			}
 		});
-=======
 
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 		btnStartCampaign = (Button) rootView
 				.findViewById(R.id.btnStartCampaign);
 		btnStartCampaign.setOnClickListener(new View.OnClickListener() {
@@ -151,16 +114,13 @@ public class CampaignFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-<<<<<<< HEAD
 
-=======
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 				new StartCampaign().execute();
 			}
 		});
 		return rootView;
 	}
-<<<<<<< HEAD
+
 	public void openGallery(int req_code){
 		Intent intent =new Intent();
 		intent.setType("image/*");
@@ -207,23 +167,16 @@ public class CampaignFragment extends Fragment {
 	}
 
 
-	public class StartCampaign extends AsyncTask<String, String, String> {
+	public class StartCampaign extends AsyncTask<String, String, String> implements NetworkCheck {
 		boolean respondcheck=false;
-=======
 
-	public class StartCampaign extends AsyncTask<String, String, String> {
-
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 		@Override
 		protected void onPreExecute() {
 			// TODO Auto-generated method stub
 			super.onPreExecute();
 			pDialog = new ProgressDialog(getActivity());
 			pDialog.setMessage("Starting Campaign...");
-<<<<<<< HEAD
-=======
-			pDialog.setIndeterminate(false);
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+
 			pDialog.setCancelable(true);
 			pDialog.show();
 		}
@@ -231,15 +184,14 @@ public class CampaignFragment extends Fragment {
 		@Override
 		protected String doInBackground(String... args) {
 			// TODO Auto-generated method stub
-<<<<<<< HEAD
+
 			String response;
-=======
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+
 			String title = inputName.getText().toString();
 			String amount = inputAmount.getText().toString();
 			int days = numOfDays.getInputType();
 			String article = inputArticle.getText().toString();
-<<<<<<< HEAD
+
 			RestClient client =new RestClient(UrlLink.createCampaign);
 			client.AddParam("title", title);
 			client.AddParam("goal", amount);
@@ -273,65 +225,13 @@ public class CampaignFragment extends Fragment {
 
 		}
 
-=======
 
-/*			List<NameValuePair> params = new ArrayList<NameValuePair>();
-			params.add(new BasicNameValuePair("title", title));
-			params.add(new BasicNameValuePair("amount", amount));
-			params.add(new BasicNameValuePair("days", String.valueOf(days)));
-			params.add(new BasicNameValuePair("article", article));*/
-
-			/*JSONObject json = jsonParser.makeHttpRequest(url_create_campaign,
-					"POST", params);*/
-			RestClient client =new RestClient(UrlLink.createCampaign);
-			client.AddParam("title", title);
-			client.AddParam("goal", amount);
-			client.AddParam("goalDuration",Integer.toString(days));
-			client.AddParam("category", Integer.toString(1));
-			client.AddParam("brief", article);
-			try{
-				client.Execute(RequestMethod.POST);
-				String response=client.getResponse();
-				return response;
-				
-			}catch(Exception ex){
-				String response=client.getErrorMessage();
-				Log.e("exception","this" ,ex);
-				return response;
-				}
-				
-			}
-			
-
-	/*		Log.d("Create Response", json.toString());
-			try {
-				int success = json.getInt(TAG_SUCCESS);
-
-				if (success == 1) {
-					Intent i = new Intent(getActivity(), BrowseProject.class);
-					// i.putExtra("first", title.getText().toString());
-					// i.putExtra("second", amount.getText().toString());
-					// i.putExtra("third", days.getText().toString());
-					// i.putExtra("fourth", article.getText().toString());
-					startActivity(i);
-					// finish();
-				} else {
-					Toast.makeText(getActivity(), "Failed to Create " + title,
-							Toast.LENGTH_SHORT).show();
-				}
-
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}*/
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
 		@Override
 		protected void onPostExecute(String result){
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-<<<<<<< HEAD
+
 			String show="";
 			String title="";
 			if(!TextUtils.isEmpty(result)){
@@ -364,37 +264,7 @@ public class CampaignFragment extends Fragment {
 			adiag.create();
 			adiag.show();
 
-=======
-		/*	
-			try {
-				int success = json.getInt(TAG_SUCCESS);
 
-				if (success == 1) {
-					Intent i = new Intent(getActivity(), BrowseProject.class);
-					// i.putExtra("first", title.getText().toString());
-					// i.putExtra("second", amount.getText().toString());
-					// i.putExtra("third", days.getText().toString());
-					// i.putExtra("fourth", article.getText().toString());
-					startActivity(i);
-					// finish();
-				} else {
-					Toast.makeText(getActivity(), "Failed to Create " + title,
-							Toast.LENGTH_SHORT).show();
-				}
-
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}*/
-			
-			pDialog.dismiss();
-			AlertDialog.Builder adiag=new AlertDialog.Builder(getActivity());
-			adiag.setMessage(result);
-			adiag.setCancelable(true);
-			adiag.create();
-			adiag.show();
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 		}
 
 	}

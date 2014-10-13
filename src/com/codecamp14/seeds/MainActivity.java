@@ -2,19 +2,14 @@ package com.codecamp14.seeds;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-<<<<<<< HEAD
-import android.app.FragmentTransaction;
-=======
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,9 +18,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.codecamp14.seeds.login.LoginActivity;
+import com.diadementi.seeds.helpers.UrlLink;
+import com.diadementi.seeds.views.ListFragment;
+import com.diadementi.seeds.views.ListFragment.Type;
 import com.parse.ParseUser;
+//import android.app.Fragment;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 	
 	public static final String TAG = MainActivity.class.getSimpleName();
 	private DrawerLayout mDrawerLayout;
@@ -75,23 +74,26 @@ public class MainActivity extends Activity {
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
 
 		navDrawerItems = new ArrayList<NavDrawerItem>();
+		for (int i = 0; i < navMenuTitles.length; i++) {
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[i], navMenuIcons.getResourceId(i, -1)));
+		}
 
-		// adding nav drawer items to array
-		// Home
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-		// Browse
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-		// Trending
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-		// How it works
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
-		// Start Campaign
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
-		// Settings
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
-		// Featured
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
-		
+//		// adding nav drawer items to array
+//		// Home
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+//		// Browse
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+//		// Trending
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+//		// How it works
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
+//		// Start Campaign
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
+//		// Settings
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
+//		// Featured
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
+//		
 
 		// Recycle the typed array
 		navMenuIcons.recycle();
@@ -190,42 +192,37 @@ public class MainActivity extends Activity {
 		Fragment fragment = null;
 		switch (position) {
 		case 0:
-			fragment = new HomeFragment();
+			fragment = new ListFragment(UrlLink.featured,Type.PUB);
 			break;
 		case 1:
 			fragment = new BrowseProject();
 			break;
 		case 2:
-			fragment = new Featured();
+			fragment = new ListFragment(UrlLink.featured,Type.PRI);
 			break;
-		case 3:
-			fragment = new Trending();
-			break;
-		case 4:
-			fragment = new HowitWorks();
-			break;
-		case 5:
-			fragment = new CampaignFragment();
-			break;
-		case 6:
-			fragment = new Settings();
-			break;
+//		case 3:
+//			fragment = new ListFragment(UrlLink.featured,Type.PRI);
+//			break;
+//		case 4:
+//			fragment = new HowitWorks();
+//			break;
+//		case 5:
+//			fragment = new CampaignFragment();
+//			break;
+//		case 6:
+//			fragment = new Settings();
+//			break;
 
 		default:
 			break;
 		}
 
 		if (fragment != null) {
-			FragmentManager fragmentManager = getFragmentManager();
-<<<<<<< HEAD
-			FragmentTransaction trans=fragmentManager.beginTransaction();
-					trans.replace(R.id.frame_container, fragment).addToBackStack(null);
+
+			getSupportFragmentManager().beginTransaction()
+			.replace(R.id.frame_container, fragment).commit();
 					setTitle(navMenuTitles[position]);
-					trans.commit();
-=======
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+
 
 			// update selected item and title, then close the drawer
 			mDrawerList.setItemChecked(position, true);

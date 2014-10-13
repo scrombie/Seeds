@@ -1,0 +1,166 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch vals
+# Changes to be committed:
+#	modified:   .classpath
+#	modified:   .project
+#	modified:   .settings/org.eclipse.jdt.core.prefs
+#	new file:   3fwf0esx.bxm.txt
+#	modified:   AndroidManifest.xml
+#	modified:   bin/AndroidManifest.xml
+#	modified:   bin/R.txt
+#	modified:   bin/Seeds.apk
+#	modified:   bin/classes.dex
+#	modified:   bin/classes/android/support/v7/appcompat/R$anim.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$attr.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$bool.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$color.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$dimen.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$drawable.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$id.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$integer.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$layout.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$string.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$style.class
+#	modified:   bin/classes/android/support/v7/appcompat/R$styleable.class
+#	modified:   bin/classes/android/support/v7/appcompat/R.class
+#	modified:   bin/classes/com/codecamp14/seeds/BrowseProject$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/BrowseProject$MyBrowseAdapter.class
+#	modified:   bin/classes/com/codecamp14/seeds/BrowseProject.class
+#	modified:   bin/classes/com/codecamp14/seeds/BuildConfig.class
+#	modified:   bin/classes/com/codecamp14/seeds/CampaignDisplayFragment.class
+#	modified:   bin/classes/com/codecamp14/seeds/CampaignFragment$StartCampaign.class
+#	modified:   bin/classes/com/codecamp14/seeds/CampaignFragment.class
+#	deleted:    bin/classes/com/codecamp14/seeds/Featured$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/Featured$CampaignAdapter.class
+#	modified:   bin/classes/com/codecamp14/seeds/Featured$FeaturedAsyncTask.class
+#	modified:   bin/classes/com/codecamp14/seeds/Featured.class
+#	new file:   bin/classes/com/codecamp14/seeds/HomeFragment$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/HomeFragment$MyListAdapter.class
+#	modified:   bin/classes/com/codecamp14/seeds/HomeFragment.class
+#	new file:   bin/classes/com/codecamp14/seeds/MainActivity$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/MainActivity$SlideMenuClickListener.class
+#	modified:   bin/classes/com/codecamp14/seeds/MainActivity.class
+#	modified:   bin/classes/com/codecamp14/seeds/NavDrawerItem.class
+#	modified:   bin/classes/com/codecamp14/seeds/NavDrawerListAdapter.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$anim.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$array.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$attr.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$bool.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$color.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$dimen.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$drawable.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$id.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$integer.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$layout.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$menu.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$string.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$style.class
+#	modified:   bin/classes/com/codecamp14/seeds/R$styleable.class
+#	modified:   bin/classes/com/codecamp14/seeds/R.class
+#	modified:   bin/classes/com/codecamp14/seeds/SeedsApplication.class
+#	modified:   bin/classes/com/codecamp14/seeds/Settings.class
+#	modified:   bin/classes/com/codecamp14/seeds/Trending$TrendingListAdapter.class
+#	modified:   bin/classes/com/codecamp14/seeds/Trending.class
+#	modified:   bin/classes/com/codecamp14/seeds/UrlLink.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/LoginActivity$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/LoginActivity$2$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/LoginActivity$2.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/LoginActivity.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/SignUpActivity$1$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/SignUpActivity$1.class
+#	modified:   bin/classes/com/codecamp14/seeds/login/SignUpActivity.class
+#	modified:   bin/classes/com/codecamp14/seeds/mocks/ProjectService.class
+#	modified:   bin/classes/com/codecamp14/seeds/models/Browse.class
+#	modified:   bin/classes/com/codecamp14/seeds/models/Home.class
+#	modified:   bin/classes/com/codecamp14/seeds/models/Project.class
+#	modified:   bin/classes/com/codecamp14/seeds/models/Trend.class
+#	modified:   bin/classes/com/h66/codecampmisclibrary/R$drawable.class
+#	modified:   bin/classes/com/h66/codecampmisclibrary/R$string.class
+#	modified:   bin/classes/com/h66/codecampmisclibrary/R$style.class
+#	modified:   bin/classes/com/h66/codecampmisclibrary/R.class
+#	modified:   bin/dexedLibs/Parse-1.5.1-37abd3d09a3b93da63bae156f43aa407.jar
+#	deleted:    bin/dexedLibs/Parse-1.5.1-4faee928c78db3f276b4dcc248c14065.jar
+#	deleted:    bin/dexedLibs/android-support-v4-4808574685633955f71330b5e35c1947.jar
+#	modified:   bin/dexedLibs/android-support-v4-e88d70e67641fe046835a5db4c2e6538.jar
+#	modified:   bin/dexedLibs/android-support-v7-appcompat-ac47106af83ae3b57da652f43a86eb74.jar
+#	deleted:    bin/dexedLibs/android-support-v7-appcompat-f3fab4df77a1b8b0dc2f8e8d9723d506.jar
+#	deleted:    bin/dexedLibs/appcompat_v7-3a813faf56643a406c149f9c58129921.jar
+#	modified:   bin/dexedLibs/appcompat_v7-f77812f555303009734abbe42e40358e.jar
+#	modified:   bin/dexedLibs/codecampmisclibrary-e0803f98f9db5de8dd2a9159235dd6d2.jar
+#	modified:   bin/dexedLibs/commons-logging-1.1.3-dc8a9c690784e223a8ff27811e001dfa.jar
+#	modified:   bin/dexedLibs/httpclient-4.3.5-b0cef7ec2ab03dc8c23408fd2df66389.jar
+#	modified:   bin/dexedLibs/httpclient-cache-4.3.5-d645adc131bbc55f57e42e8739969c7c.jar
+#	modified:   bin/dexedLibs/httpcore-4.3.2-778fa790ebb0ae420fdfb98095410c46.jar
+#	modified:   bin/dexedLibs/httpmime-4.3.5-01a879a9e7e9e60673a3cedfa6ff9a98.jar
+#	modified:   bin/dexedLibs/picasso-2.3.4-85ee8e707533a2e7aec7fe4c2a35283d.jar
+#	modified:   bin/jarlist.cache
+#	modified:   bin/resources.ap_
+#	modified:   gen/android/support/v7/appcompat/R.java
+#	modified:   gen/com/codecamp14/seeds/R.java
+#	modified:   gen/com/h66/codecampmisclibrary/R.java
+#	modified:   project.properties
+#	modified:   res/layout/fragment_browse.xml
+#	modified:   res/layout/fragment_campaign.xml
+#	modified:   res/layout/fragment_campaignview.xml
+#	modified:   res/layout/fragment_featured.xml
+#	modified:   res/layout/list_item.xml
+#	modified:   res/layout/list_trending.xml
+#	modified:   res/values/strings.xml
+#	modified:   src/com/codecamp14/seeds/BrowseProject.java
+#	modified:   src/com/codecamp14/seeds/Campaign.java
+#	modified:   src/com/codecamp14/seeds/CampaignDisplayFragment.java
+#	modified:   src/com/codecamp14/seeds/CampaignFragment.java
+#	modified:   src/com/codecamp14/seeds/Featured.java
+#	modified:   src/com/codecamp14/seeds/HomeFragment.java
+#	modified:   src/com/codecamp14/seeds/MainActivity.java
+#	modified:   src/com/codecamp14/seeds/UrlLink.java
+#
+# Untracked files:
+#	bin/Seeds5.apk
+#	bin/classes/com/codecamp14/seeds/CampaignDisplayFragment$MyWebClient.class
+#	bin/classes/com/codecamp14/seeds/DisplayCampaign.class
+#	bin/classes/com/codecamp14/seeds/NetworkCheck.class
+#	bin/classes/com/codecamp14/seeds/models/Campaign.class
+#	bin/classes/com/diadementi/
+#	bin/dexedLibs/Parse-1.5.1-0a359b91044b5df53958db5048f4753c.jar
+#	bin/dexedLibs/android-support-v4-c264c272516f7d2538bbf34cd39ed10c.jar
+#	bin/dexedLibs/gson-2.1-3eef3d82919e90391aff2067342c7ca1.jar
+#	bin/dexedLibs/picasso-2.3.4-404edefb5d39a34efa94a9b8a0f22f7a.jar
+#	bin/res/crunch/drawable-hdpi/ic_action_accept.png
+#	bin/res/crunch/drawable-hdpi/ic_action_cancel.png
+#	bin/res/crunch/drawable-mdpi/blank_campaign.png
+#	bin/res/crunch/drawable-mdpi/ic_action_accept.png
+#	bin/res/crunch/drawable-mdpi/ic_action_cancel.png
+#	bin/res/crunch/drawable-xhdpi/ic_action_accept.png
+#	bin/res/crunch/drawable-xhdpi/ic_action_cancel.png
+#	bin/res/crunch/drawable-xxhdpi/
+#	libs/gson-2.1.jar
+#	lint.xml
+#	res/drawable-hdpi/ic_action_accept.png
+#	res/drawable-hdpi/ic_action_cancel.png
+#	res/drawable-mdpi/blank_campaign.png
+#	res/drawable-mdpi/ic_action_accept.png
+#	res/drawable-mdpi/ic_action_cancel.png
+#	res/drawable-xhdpi/ic_action_accept.png
+#	res/drawable-xhdpi/ic_action_cancel.png
+#	res/drawable-xxhdpi/
+#	res/layout/activity_details.xml
+#	res/layout/fragment_input.xml
+#	res/layout/fragment_main.xml
+#	res/layout/item_view.xml
+#	res/layout/list_row.xml
+#	res/menu/campaign_display.xml
+#	res/menu/detail_priv.xml
+#	res/menu/detail_pub.xml
+#	res/menu/input.xml
+#	res/menu/list.xml
+#	res/menu/list_pri.xml
+#	seeds_v0.2/
+#	src/com/codecamp14/seeds/DisplayCampaign.java
+#	src/com/codecamp14/seeds/NetworkCheck.java
+#	src/com/codecamp14/seeds/models/Campaign.java
+#	src/com/diadementi/
+#
+

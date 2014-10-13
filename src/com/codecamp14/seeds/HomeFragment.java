@@ -20,11 +20,9 @@ import android.widget.Toast;
 public class HomeFragment extends Fragment {
 	ListView list;
 	ImageView img;
-<<<<<<< HEAD
+
 	TextView tit;
-=======
-	TextView tv;
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+
 	TextView cat;
 	private static List<Home> home = new ArrayList<Home>();
 
@@ -94,21 +92,14 @@ public class HomeFragment extends Fragment {
 			}
 			
 			img = (ImageView) itemView.findViewById(R.id.imageView1);
-<<<<<<< HEAD
+
 			tit = (TextView) itemView.findViewById(R.id.title);
 			cat = (TextView) itemView.findViewById(R.id.category);
 			Home homeAdd = home.get(position);
 			img.setImageResource(homeAdd.getIcon());
 
 			tit.setText(homeAdd.getTitle());
-=======
-			tv = (TextView) itemView.findViewById(R.id.signUP);
-			cat = (TextView) itemView.findViewById(R.id.textView2);
-			Home homeAdd = home.get(position);
-			img.setImageResource(homeAdd.getIcon());
 
-			tv.setText(homeAdd.getTitle());
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 			cat.setText(homeAdd.getCategory());
 			return itemView;
 		}

@@ -53,7 +53,7 @@ public class Featured extends Fragment {
 				// TODO Auto-generated method stub
 				Campaign c=(Campaign)parent.getItemAtPosition(position);
 				FragmentTransaction f=getFragmentManager().beginTransaction();
-				String url="http://10.0.2.2/seeds3/v2/mcampaign/"+c.getId();
+				String url=UrlLink.getCampaignView(c.getId());
 				Fragment campaign=new CampaignDisplayFragment(url);
 				f.replace(R.id.frame_container, campaign);
 				f.addToBackStack(null);

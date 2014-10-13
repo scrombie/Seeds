@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
-  <!--   
+  
     <ListView
         android:id="@+id/browseList"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/> -->
+        android:layout_height="wrap_content"
+        android:padding="10dp"/> 
        
-         <GridView
+      <!--    <GridView
         android:id="@+id/browseList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-<<<<<<< HEAD
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-=======
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+		android:columnWidth="90dp"
+		android:numColumns="2"
         android:layout_marginTop="15dp"
-        android:numColumns="2" >
-    </GridView>
+        android:stretchMode="columnWidth"
+        android:gravity="center" >
+    </GridView> -->
    
 
 
-</LinearLayout>
+</RelativeLayout>

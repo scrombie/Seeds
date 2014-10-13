@@ -10,12 +10,12 @@
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
         <item>Home</item>
-        <item>Browse</item>
-        <item>Featured</item>
-        <item>Trending</item>
+        <item>Categories</item>
+        <item>My Campaign</item>
+        <!-- <item>Trending</item>
         <item>How it Works</item>
         <item>Start Campaign</item>
-        <item>Settings</item>
+        <item>Settings</item> -->
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->
@@ -44,7 +44,6 @@
         <item>OTHERS</item>
         
     </string-array>
-<<<<<<< HEAD
         <string name="coffee_however_you_like_it">Coffee, However You Like It</string>
         <string name="add_image">Add Image</string>
         <string name="details">Details</string>
@@ -57,7 +56,20 @@
         <string name="title">Title</string>
         <string name="thumnail_of_campaign">Thumnail of campaign</string>
         <string name="technology">TECHNOLOGY</string>
-=======
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+        <string name="description">Description</string>
+        <string name="category">Category</string>
+<!--             <string name="app_name">Seeds</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="thumnail_of_campaign">thumnail of campaign</string>
+    <string name="title">Title</string>
+    <string name="category">Category</string> -->
+    <string name="noConnection">Unable to connect, check your Network Connection</string>
+    <string name="title_activity_campaign_display">CampaignDisplayActivity</string>
+    <string name="action_share">Share</string>
+    <string name="action_new">New Campaign</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_accept">Accept</string>
 
 </resources>

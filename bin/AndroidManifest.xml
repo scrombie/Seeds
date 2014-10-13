@@ -10,13 +10,14 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name="SeedsApplication"
         android:allowBackup="true"
         android:icon="@drawable/orange"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light" >
+        android:theme="@style/Theme.AppCompat" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -34,6 +35,14 @@
             android:name="com.codecamp14.seeds.login.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:parentActivityName="com.codecamp14.seeds.login.LoginActivity" >
+        </activity>
+       <activity
+            android:name="com.diadementi.seeds.views.DetailActivity"
+            android:label="@string/title_activity_campaign_display"
+            android:parentActivityName="android.support.v7.app.ActionBarActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.support.v7.app.ActionBarActivity" />
         </activity>
     </application>
 

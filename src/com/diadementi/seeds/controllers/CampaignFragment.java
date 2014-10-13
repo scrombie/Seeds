@@ -1,0 +1,381 @@
+//
+package com.diadementi.seeds.controllers;
+
+import java.io.File;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources.NotFoundException;
+import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.codecamp.libs.RestClient;
+import com.codecamp.libs.RestClient.RequestMethod;
+import com.codecamp14.seeds.R;
+import com.diadementi.seeds.helpers.Alert;
+import com.diadementi.seeds.helpers.UrlLink;
+import com.diadementi.seeds.models.Campaign;
+import com.google.gson.Gson;
+
+public class CampaignFragment extends Fragment {
+	/*
+	 * { "id": "1", "title":
+	 * "Space Rites: Interactive Installation & Performance Series", "brief":
+	 * "Taylor Lee Shepherd's oscilloscopes will translate footsteps, voices and music into responsive visuals in the St. Maurice church."
+	 * , "creator": "New Orleans airlift", "goal": "6000", "created":
+	 * "2014-08-26 10:55:00", "goal_duration": "2014-09-04", "total_donations":
+	 * "0", "total_donors": "0" },
+	 */
+
+	EditText inputName, inputAmount, numOfDays, inputArticle;
+	Button btnStartCampaign, imageload;
+	ProgressDialog pDialog;
+	private static final int SELECT_FILE1 = 1;
+	String selectedPath1 = "NONE";
+	String selectedType = "None";
+	TextView selectedPathView;
+	private enum MODE{
+		edit,add
+	}
+	private MODE mode=MODE.add;
+	private String urls[]={UrlLink.createCampaign,UrlLink.update};
+	protected String url=UrlLink.createCampaign;
+	Campaign c;
+	private static final String TAG_MESSAGE = "message";
+	private static final String TAG_SUCCESS = "response";
+
+	public CampaignFragment() {
+		setHasOptionsMenu(true);
+	}
+
+	public CampaignFragment(String url) {
+		setHasOptionsMenu(true);
+		this.url = url;
+	}
+
+	/*
+	 * 
+	 * 
+	 *
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		String json = "";
+		json = getActivity().getIntent().getExtras().containsKey("json") ? getActivity()
+				.getIntent().getStringExtra("json") : null;
+				if(!TextUtils.isEmpty(json)){
+					c=new Gson().fromJson(json, Campaign.class);
+					this.mode=MODE.edit;
+				}else{ 
+					c=new Campaign();
+				}
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		View rootView = inflater.inflate(R.layout.fragment_input, container,
+				false);
+
+		Spinner spinner = (Spinner) rootView.findViewById(R.id.categorySpinner);
+
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				getActivity(), R.array.spinner_array,
+				android.R.layout.simple_spinner_item);
+
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+		// String json="";
+		// json=getActivity().getIntent().getExtras().containsKey("json")?getActivity().getIntent().getStringExtra("json"):null;
+		// c=!TextUtils.isEmpty(json)?new Gson().fromJson(json,
+		// Campaign.class):new Campaign();
+		inputName = (EditText) rootView.findViewById(R.id.inputName);
+		inputName.setText(c.getTitle());
+		inputAmount = (EditText) rootView.findViewById(R.id.inputAmount);
+		inputAmount.setText(Integer.toString(c.getGoal()));
+		numOfDays = (EditText) rootView.findViewById(R.id.numOfDays);
+		numOfDays.setText(c.getGoalDuration());
+		inputArticle = (EditText) rootView.findViewById(R.id.inputArticle);
+		inputArticle.setText(c.getDesc());
+		selectedPathView = (TextView) rootView.findViewById(R.id.selectedPath);
+
+		imageload = (Button) rootView.findViewById(R.id.imageload);
+		imageload.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				openGallery(SELECT_FILE1);
+
+			}
+		});
+
+//		btnStartCampaign = (Button) rootView
+//				.findViewById(R.id.btnStartCampaign);
+//		btnStartCampaign.setOnClickListener(new View.OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				makeRequest(url);
+//			}
+//		});
+
+		return rootView;
+	}
+
+	/**
+	 * @param mode2 
+	 * @return 
+	 * @throws NotFoundException
+	 */
+	public boolean makeRequest(String url) throws NotFoundException {
+		
+		boolean requestResult=false;
+		if (isNetworkAvailable()) {
+			StartCampaign task=new StartCampaign();
+			task.execute(url);
+			requestResult=task.respondcheck;
+		} else {
+			Alert.showAlert(getActivity(), getString(R.string.noConnection),
+					null);
+		}
+		return requestResult;
+	}
+
+	/* 
+	 * 
+	 */
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		// TODO Auto-generated method stub
+		inflater.inflate(R.menu.input, menu);
+	}
+
+	/* 
+	 * 
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		int itemId = item.getItemId();
+		switch (itemId) {
+		case R.id.action_accept:
+			accept();
+			break;
+		case R.id.action_cancel:
+			getActivity().finish();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	private void accept() {
+		// TODO Auto-generated method stub
+		switch(mode){
+		case edit:
+			if(makeRequest(urls[1]+"/"+c.getId())) getActivity().finish();
+			break;
+		default:
+			if(makeRequest(urls[0])) getActivity().finish();
+			break;
+			
+		}
+		
+	}
+
+	public void openGallery(int req_code) {
+		Intent intent = new Intent();
+		intent.setType("image/*");
+		intent.setAction(Intent.ACTION_GET_CONTENT);
+		intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		startActivityForResult(
+				Intent.createChooser(intent, "Select image to upload"),
+				req_code);
+	}
+
+	public String[] getFileInfo(Uri uri) {
+		String[] projection = { MediaStore.Images.Media.DATA,
+				MediaStore.Images.Media.MIME_TYPE };
+		Cursor cursor = getActivity().getContentResolver().query(uri,
+				projection, null, null, null);
+		int column_index = cursor
+				.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		int index = cursor
+				.getColumnIndexOrThrow(MediaStore.Images.Media.MIME_TYPE);
+
+		cursor.moveToFirst();
+		String info[] = { cursor.getString(column_index),
+				cursor.getString(index) };
+		// return cursor.getString(column_index);
+		cursor.close();
+		return info;
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if (resultCode == Activity.RESULT_OK) {
+			Uri selectedImageUri = data.getData();
+			if (requestCode == SELECT_FILE1) {
+				String[] selectedinfo = getFileInfo(selectedImageUri);
+				selectedPath1 = selectedinfo[0];
+				selectedType = selectedinfo[1];
+				selectedPathView.setText(selectedPath1);
+			}
+
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	private boolean isNetworkAvailable() {
+		ConnectivityManager connectMan = (ConnectivityManager) getActivity()
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo networkinfo = connectMan.getActiveNetworkInfo();
+		boolean isAvailable = false;
+		if (networkinfo != null && networkinfo.isConnected()) {
+			isAvailable = true;
+		}
+		return isAvailable;
+	}
+
+	public class StartCampaign extends AsyncTask<String, String, String> {
+		boolean respondcheck = false;
+
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			pDialog = new ProgressDialog(getActivity());
+			pDialog.setMessage("processing...");
+
+			pDialog.setCancelable(true);
+			pDialog.show();
+		}
+
+		@Override
+		protected String doInBackground(String... args) {
+			// TODO Auto-generated method stub
+
+			String title = inputName.getText().toString();
+			String amount = inputAmount.getText().toString();
+			int days = numOfDays.getInputType();
+			String article = inputArticle.getText().toString();
+			RequestMethod method=mode.equals(MODE.edit)?RequestMethod.PUT:RequestMethod.MultiPartPOST;
+			RestClient client = new RestClient(args[0]);
+			client.AddParam("title", title);
+			client.AddParam("goal", amount);
+			client.AddParam("goal_duration", Integer.toString(days));
+			client.AddParam("category", Integer.toString(1));
+			client.AddParam("brief", article);
+			File image = new File(selectedPath1);
+			if (image.isFile()) {
+				client.AddFile("photos", image, selectedType);
+			}
+			return requestExecute(client,method);
+
+		}
+
+		/**
+		 * @param client
+		 * @return
+		 */
+		public String requestExecute(RestClient client,RequestMethod method) {
+			String response;
+			try {
+
+				client.Execute(method);
+				int responseCode = client.getResponseCode();
+				Log.e("response code",""+responseCode);
+				if (responseCode == 200 || responseCode == 400
+						|| responseCode == 201) {
+					response = client.getResponse();
+					Log.v("response from server", response);
+					return response;
+				}
+
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				Log.e("exception", "this", ex);
+
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			pDialog.dismiss();
+			this.respondcheck=responseTest(result);
+
+		}
+
+		/**
+		 * This function checks the JSON's response key
+		 *  and give an Alert dialog message of the response message
+		 * 
+		 * @param result  JSON string from HttpResponse
+		 * @return boolean true if 1 and false if 0 
+		 */
+		public boolean responseTest(String result) {
+			boolean res=false;
+			String show = "";
+			String title = "";
+			if (!TextUtils.isEmpty(result)) {
+				try {
+					JSONObject json = new JSONObject(result);
+					Log.i("json response", json.toString());
+					int responseTest = json.getInt(TAG_SUCCESS);
+					switch (responseTest) {
+					case 0:
+						show = json.getString(TAG_MESSAGE);
+						break;
+					case 1:
+						show = json.getString(TAG_MESSAGE);
+						res=true;
+						break;
+					}
+
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			} else {
+				show = "Unable to connect, Please try again";
+			}
+			Alert.showAlert(getActivity(), show, title);
+			return res;
+		}
+
+	}
+
+}
