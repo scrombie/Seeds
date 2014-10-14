@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.codecamp14.seeds.models.Browse;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
+//import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class BrowseProject extends Fragment {
 	//changed to grid view
-//	ListView browseList;
-	GridView browseList;
+	ListView browseList;
+//	GridView browseList;
 	TextView browseText;
 	TextView browseCat;
 	
@@ -42,8 +42,8 @@ public class BrowseProject extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_browse, container,
 				false);
-//		browseList = (ListView)rootView.findViewById(R.id.browseList);
-		browseList = (GridView)rootView.findViewById(R.id.browseList);
+		browseList = (ListView)rootView.findViewById(R.id.browseList);
+//		browseList = (GridView)rootView.findViewById(R.id.browseList);
 		BrowseListView();
 		//valentine commented this out to stop duplication
 //		BrosweHomeList();

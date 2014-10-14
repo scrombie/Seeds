@@ -15,17 +15,9 @@
         android:id="@+id/imageView1"
         android:layout_width="180dp"
         android:layout_height="80dp"
-<<<<<<< HEAD
         android:src="@drawable/ic_communities"
         android:layout_weight="0.5"
         android:contentDescription="@string/thumnail_of_campaign" />
-=======
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/ic_communities"
-        android:layout_weight="0.5" />
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +27,6 @@
         android:orientation="vertical" >
         
         <TextView
-<<<<<<< HEAD
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,21 +38,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.7"
         android:text="@string/technology" />
-=======
-        android:id="@+id/signUP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.7"
-        android:text="TECHNOLOGY" />
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
 
     
 		</LinearLayout>

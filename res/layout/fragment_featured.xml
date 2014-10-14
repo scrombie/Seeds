@@ -3,19 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-<<<<<<< HEAD
 
-   
-=======
-    
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:text="Featured Campaign"
-        android:textSize="16dp" />
->>>>>>> 5646baddf2d9c0fe2d5ba15e083889fd6908408d
+
     
     <ListView
         android:id="@+id/featList"
