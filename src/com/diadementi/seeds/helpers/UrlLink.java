@@ -12,6 +12,7 @@ public  class UrlLink {
 	public static String catergories="http://192.168.43.146/seeds3/v2/categories";
 	public static final String register="http://192.168.56.1/seeds3/v2/register";
 	public static final String login="http://192.168.56.1/seeds3/v2/login";
+	public static final String usersCampaign="http://192.168.56.1/seeds3/v2/mycampaign";
 	public static String getCategory(int id) {
 		return category+id;
 	}

@@ -33,7 +33,6 @@ import android.widget.Toast;
 import com.codecamp.libs.RestClient;
 import com.codecamp.libs.RestClient.RequestMethod;
 import com.codecamp14.seeds.R;
-import com.diadementi.seeds.controllers.CampaignFragment.StartCampaign;
 import com.diadementi.seeds.helpers.Alert;
 import com.diadementi.seeds.helpers.UrlLink;
 import com.diadementi.seeds.models.Campaign;

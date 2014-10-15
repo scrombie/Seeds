@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources.NotFoundException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -54,6 +55,9 @@ public class ListFragment extends Fragment {
 	public static enum Type{
 		PRI,PUB;
 	}
+	public static final String PREFS_NAME = "MyPrefsFile";
+	SharedPreferences shared;
+	String apiKey;
 	/**
 	 * 
 	 */
@@ -75,6 +79,16 @@ public class ListFragment extends Fragment {
 		this.type=type;
 	}
 
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.Fragment#onCreate(android.os.Bundle)
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO 
+		shared=getActivity().getSharedPreferences(PREFS_NAME, 0);
+		apiKey=shared.getString("api_key", null);
+		super.onCreate(savedInstanceState);
+	}
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -231,6 +245,8 @@ public class ListFragment extends Fragment {
 		 */
 		private String request(String... url) {
 			dami = new RestClient(url[0]);
+			dami.AddHeader("Authorization", apiKey);
+			
 			try {
 				dami.Execute(RequestMethod.GET);
 
