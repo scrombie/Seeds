@@ -64,8 +64,8 @@ public class CampaignFragment extends Fragment {
 		add,edit
 	}
 	private MODE mode=MODE.add;
-	private String urls[]={UrlLink.createCampaign,UrlLink.update};
-	protected String url=UrlLink.createCampaign;
+	private String urls[]={UrlLink.add,UrlLink.update};
+	protected String url=UrlLink.add;
 	Campaign c;
 	private static final String TAG_MESSAGE = "message";
 	private static final String TAG_SUCCESS = "response";
@@ -295,8 +295,10 @@ public class CampaignFragment extends Fragment {
 			String amount = inputAmount.getText().toString();
 			int days = numOfDays.getInputType();
 			String article = inputArticle.getText().toString();
-			RequestMethod method=mode.equals(MODE.edit)?RequestMethod.PUT:RequestMethod.MultiPartPOST;
+			//RequestMethod method=mode.equals(MODE.edit)?RequestMethod.PUT2:RequestMethod.MultiPartPOST;
+			RequestMethod method=RequestMethod.MultiPartPOST;
 			RestClient client = new RestClient(args[0]);
+			Log.i("url", args[0]);
 			apiKey=shared.getString("api_key", "");
 			client.AddHeader("Authorization", apiKey);
 			Log.e("api_key",apiKey);
@@ -331,7 +333,7 @@ public class CampaignFragment extends Fragment {
 					Log.v("response from server", response);
 					return response;
 				}
-				Log.e("error message from client",client.getErrorMessage());
+				Log.e("error message from client",client.getErrorMessage()+ client.getResponse());
 
 			} catch (Exception ex) {
 				ex.printStackTrace();
