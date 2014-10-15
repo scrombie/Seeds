@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources.NotFoundException;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
@@ -60,6 +61,8 @@ public class DetailsFragment extends Fragment {
 		this.mode=mode;
 		setHasOptionsMenu(true);
 	}
+	public static final String PREFS_NAME = "MyPrefsFile";
+	SharedPreferences shared;
 	
 
 	/* (non-Javadoc)
@@ -122,7 +125,7 @@ public class DetailsFragment extends Fragment {
 
 	private void discard() {
 		// TODO Add more process to discard campaign
-		makeRequest(UrlLink.delete+c.getId());
+		makeRequest(UrlLink.delete(c.getId()));
 		Log.e("response check in discard function",""+respondcheck);
 		if(respondcheck){
 		getActivity().setResult(Activity.RESULT_OK);
@@ -282,6 +285,8 @@ public class DetailsFragment extends Fragment {
 			// TODO Auto-generated method stub
 
 			RestClient client = new RestClient(args[0]);
+			shared=getActivity().getSharedPreferences(PREFS_NAME, 0);
+			client.AddHeader("Authorization", shared.getString("api_key", null));
 			return requestExecute(client,RequestMethod.DELETE);
 
 		}
