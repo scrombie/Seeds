@@ -7,7 +7,10 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.content.SharedPreferences;
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 import android.content.res.Resources.NotFoundException;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
@@ -33,6 +36,10 @@ import android.widget.Toast;
 import com.codecamp.libs.RestClient;
 import com.codecamp.libs.RestClient.RequestMethod;
 import com.codecamp14.seeds.R;
+<<<<<<< HEAD
+=======
+import com.diadementi.seeds.controllers.CampaignFragment.StartCampaign;
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 import com.diadementi.seeds.helpers.Alert;
 import com.diadementi.seeds.helpers.UrlLink;
 import com.diadementi.seeds.models.Campaign;
@@ -48,7 +55,10 @@ public class DetailsFragment extends Fragment {
 	}
 	Campaign c;
 	Intent prevI;
+<<<<<<< HEAD
 	boolean respondcheck = false;
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 
 	public DetailsFragment(String url) {
 		this.url = url;
@@ -60,8 +70,11 @@ public class DetailsFragment extends Fragment {
 		this.mode=mode;
 		setHasOptionsMenu(true);
 	}
+<<<<<<< HEAD
 	public static final String PREFS_NAME = "MyPrefsFile";
 	SharedPreferences shared;
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 	
 
 	/* (non-Javadoc)
@@ -124,9 +137,13 @@ public class DetailsFragment extends Fragment {
 
 	private void discard() {
 		// TODO Add more process to discard campaign
+<<<<<<< HEAD
 		makeRequest(UrlLink.delete(c.getId()));
 		Log.e("response check in discard function",""+respondcheck);
 		if(respondcheck){
+=======
+		if(makeRequest(UrlLink.delete+c.getId())) {
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 		getActivity().setResult(Activity.RESULT_OK);
 		getActivity().finish();
 		}
@@ -255,8 +272,12 @@ public class DetailsFragment extends Fragment {
 		if (isNetworkAvailable()) {
 			Request task=new Request();
 			task.execute(url);
+<<<<<<< HEAD
 			requestResult=respondcheck;
 			Log.i("boolean value of response check",""+requestResult);
+=======
+			requestResult=task.respondcheck;
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 		} else {
 			Alert.showAlert(getActivity(), getString(R.string.noConnection),
 					null);
@@ -266,6 +287,10 @@ public class DetailsFragment extends Fragment {
 	public class Request extends AsyncTask<String, String, String> {
 		private static final String TAG_MESSAGE = "message";
 		private static final String TAG_SUCCESS = "response";
+<<<<<<< HEAD
+=======
+		boolean respondcheck = false;
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 		private ProgressDialog pDialog;
 
 		@Override
@@ -284,8 +309,11 @@ public class DetailsFragment extends Fragment {
 			// TODO Auto-generated method stub
 
 			RestClient client = new RestClient(args[0]);
+<<<<<<< HEAD
 			shared=getActivity().getSharedPreferences(PREFS_NAME, 0);
 			client.AddHeader("Authorization", shared.getString("api_key", null));
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 			return requestExecute(client,RequestMethod.DELETE);
 
 		}
@@ -321,8 +349,12 @@ public class DetailsFragment extends Fragment {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			pDialog.dismiss();
+<<<<<<< HEAD
 			respondcheck=responseTest(result);
 			Log.v("response check in onpost execute",""+respondcheck);
+=======
+			this.respondcheck=responseTest(result);
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 
 		}
 
@@ -364,7 +396,10 @@ public class DetailsFragment extends Fragment {
 			return res;
 		}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 	}
 
 

@@ -11,7 +11,10 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.content.SharedPreferences;
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 import android.content.res.Resources.NotFoundException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -55,14 +58,21 @@ public class ListFragment extends Fragment {
 	public static enum Type{
 		PRI,PUB;
 	}
+<<<<<<< HEAD
 	public static final String PREFS_NAME = "MyPrefsFile";
 	SharedPreferences shared;
 	String apiKey;
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 	/**
 	 * 
 	 */
 	ListFragment(){
+<<<<<<< HEAD
 		this(UrlLink.Campaigns);
+=======
+		this(UrlLink.getCampaigns);
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 	}
 	public ListFragment(String url) {
 		// TODO get adapter at instantiation or onCreate
@@ -79,6 +89,7 @@ public class ListFragment extends Fragment {
 		this.type=type;
 	}
 
+<<<<<<< HEAD
 	/* (non-Javadoc)
 	 * @see android.support.v4.app.Fragment#onCreate(android.os.Bundle)
 	 */
@@ -89,6 +100,8 @@ public class ListFragment extends Fragment {
 		apiKey=shared.getString("api_key", null);
 		super.onCreate(savedInstanceState);
 	}
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -245,8 +258,11 @@ public class ListFragment extends Fragment {
 		 */
 		private String request(String... url) {
 			dami = new RestClient(url[0]);
+<<<<<<< HEAD
 			dami.AddHeader("Authorization", apiKey);
 			
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 			try {
 				dami.Execute(RequestMethod.GET);
 

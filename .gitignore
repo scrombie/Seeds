@@ -42,5 +42,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.class
+<<<<<<< HEAD
 bin/*
 *.dex
+=======
+bin/
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1

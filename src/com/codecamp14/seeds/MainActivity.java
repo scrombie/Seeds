@@ -11,7 +11,10 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+<<<<<<< HEAD
 import android.text.TextUtils;
+=======
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -86,6 +89,26 @@ public class MainActivity extends ActionBarActivity {
 		for (int i = 0; i < navMenuTitles.length; i++) {
 			navDrawerItems.add(new NavDrawerItem(navMenuTitles[i], navMenuIcons.getResourceId(i, -1)));
 		}
+<<<<<<< HEAD
+=======
+
+//		// adding nav drawer items to array
+//		// Home
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+//		// Browse
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+//		// Trending
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+//		// How it works
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
+//		// Start Campaign
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
+//		// Settings
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
+//		// Featured
+//		navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
+//		
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 
 		// Recycle the typed array
 		navMenuIcons.recycle();
@@ -190,7 +213,11 @@ public class MainActivity extends ActionBarActivity {
 			fragment = new BrowseProject();
 			break;
 		case 2:
+<<<<<<< HEAD
 			fragment = new ListFragment(UrlLink.usersCampaign,Type.PRI);
+=======
+			fragment = new ListFragment(UrlLink.featured,Type.PRI);
+>>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 			break;
 //		case 3:
 //			fragment = new ListFragment(UrlLink.featured,Type.PRI);
