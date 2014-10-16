@@ -10,10 +10,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.content.SharedPreferences;
-=======
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 import android.content.res.Resources.NotFoundException;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
@@ -21,10 +18,6 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-<<<<<<< HEAD
-import android.preference.PreferenceManager;
-=======
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -67,7 +60,6 @@ public class CampaignFragment extends Fragment {
 	String selectedType = "None";
 	TextView selectedPathView;
 	private enum MODE{
-<<<<<<< HEAD
 		add,edit
 	}
 	private MODE mode=MODE.add;
@@ -79,16 +71,7 @@ public class CampaignFragment extends Fragment {
 	public static final String PREFS_NAME = "MyPrefsFile";
 	SharedPreferences shared;
 	String apiKey;
-=======
-		edit,add
-	}
-	private MODE mode=MODE.add;
-	private String urls[]={UrlLink.createCampaign,UrlLink.update};
-	protected String url=UrlLink.createCampaign;
-	Campaign c;
-	private static final String TAG_MESSAGE = "message";
-	private static final String TAG_SUCCESS = "response";
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
+
 
 	public CampaignFragment() {
 		setHasOptionsMenu(true);
@@ -131,10 +114,9 @@ public class CampaignFragment extends Fragment {
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				getActivity(), R.array.spinner_array,
 				android.R.layout.simple_spinner_item);
-<<<<<<< HEAD
+
 		shared=this.getActivity().getSharedPreferences(PREFS_NAME, 0);
-=======
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
+
 
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
@@ -225,16 +207,12 @@ public class CampaignFragment extends Fragment {
 
 	private void accept() {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
+
 		Log.e("mode",mode.toString());
 		switch(mode){
 		case edit:
 			if(makeRequest(urls[1]+c.getId())) getActivity().finish();
-=======
-		switch(mode){
-		case edit:
-			if(makeRequest(urls[1]+"/"+c.getId())) getActivity().finish();
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
+
 			break;
 		default:
 			if(makeRequest(urls[0])) getActivity().finish();
@@ -321,7 +299,7 @@ public class CampaignFragment extends Fragment {
 			String amount = inputAmount.getText().toString();
 			int days = numOfDays.getInputType();
 			String article = inputArticle.getText().toString();
-<<<<<<< HEAD
+
 			//RequestMethod method=mode.equals(MODE.edit)?RequestMethod.PUT2:RequestMethod.MultiPartPOST;
 			RequestMethod method=RequestMethod.MultiPartPOST;
 			RestClient client = new RestClient(args[0]);
@@ -329,10 +307,7 @@ public class CampaignFragment extends Fragment {
 			apiKey=shared.getString("api_key", "");
 			client.AddHeader("Authorization", apiKey);
 			Log.e("api_key",apiKey);
-=======
-			RequestMethod method=mode.equals(MODE.edit)?RequestMethod.PUT:RequestMethod.MultiPartPOST;
-			RestClient client = new RestClient(args[0]);
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
+
 			client.AddParam("title", title);
 			client.AddParam("goal", amount);
 			client.AddParam("goal_duration", Integer.toString(days));
@@ -352,10 +327,7 @@ public class CampaignFragment extends Fragment {
 		 */
 		public String requestExecute(RestClient client,RequestMethod method) {
 			String response;
-<<<<<<< HEAD
-			
-=======
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
+
 			try {
 
 				client.Execute(method);
@@ -367,10 +339,9 @@ public class CampaignFragment extends Fragment {
 					Log.v("response from server", response);
 					return response;
 				}
-<<<<<<< HEAD
+
 				Log.e("error message from client",client.getErrorMessage()+ client.getResponse());
-=======
->>>>>>> 69f32f195192c99b221cb45cfb557bf26bba6fc1
+
 
 			} catch (Exception ex) {
 				ex.printStackTrace();
