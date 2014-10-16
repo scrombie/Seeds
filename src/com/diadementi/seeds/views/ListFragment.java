@@ -106,6 +106,11 @@ public class ListFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+		Bundle b=getArguments();
+		String title=b.containsKey("title")?b.getString("title"):null;
+		if(title!=null){
+			getActivity().setTitle(title);
+		}
 		final View rootView = inflater.inflate(R.layout.fragment_main,
 				container, false);
 
