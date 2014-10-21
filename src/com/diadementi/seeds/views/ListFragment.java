@@ -106,11 +106,11 @@ public class ListFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		Bundle b=getArguments();
-		String title=b.containsKey("title")?b.getString("title"):null;
-		if(title!=null){
-			getActivity().setTitle(title);
-		}
+//		Bundle b=getArguments();
+//		String title=b.containsKey("title")?b.getString("title"):null;
+//		if(title!=null){
+//			getActivity().setTitle(title);
+//		}
 		final View rootView = inflater.inflate(R.layout.fragment_main,
 				container, false);
 
@@ -257,16 +257,16 @@ public class ListFragment extends Fragment {
 		private String request(String... url) {
 			dami = new RestClient(url[0]);
 
-			dami.AddHeader("Authorization", apiKey);
+			
 			
 
 			try {
+				dami.AddHeader("Authorization", apiKey);
+				Log.e("apikey",apiKey);
 				dami.Execute(RequestMethod.GET);
 
 				text = dami.getResponse();
 				Log.i("json data", text);
-				Log.e("myseeds fragment error", "problem with response");
-
 				JSONObject mainObject = new JSONObject(text);
 				mainObject.get("response");
 				JSONArray dataObject = mainObject.getJSONArray("data");

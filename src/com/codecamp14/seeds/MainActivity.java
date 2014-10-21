@@ -156,7 +156,10 @@ public class MainActivity extends ActionBarActivity {
 		// Handle action bar actions click
 		switch (item.getItemId()) {
 		case R.id.action_settings:
-			ParseUser.logOut();
+			SharedPreferences shared=getSharedPreferences(PREFS_NAME, 0);
+			SharedPreferences.Editor editor=shared.edit();
+			editor.clear();
+			editor.commit();
 			Intent i = new Intent(this, LoginActivity.class);
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
