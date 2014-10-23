@@ -256,10 +256,6 @@ public class ListFragment extends Fragment {
 		 */
 		private String request(String... url) {
 			dami = new RestClient(url[0]);
-
-			
-			
-
 			try {
 				dami.AddHeader("Authorization", apiKey);
 				Log.e("apikey",apiKey);
@@ -268,12 +264,12 @@ public class ListFragment extends Fragment {
 				text = dami.getResponse();
 				Log.i("json data", text);
 				JSONObject mainObject = new JSONObject(text);
-				mainObject.get("response");
+				Log.i("json object", mainObject.toString());
+				int jsonresponse=mainObject.getInt("response");
 				JSONArray dataObject = mainObject.getJSONArray("data");
-
+				Log.e("dataObject",dataObject.toString());
 				for (int i = 0; i < dataObject.length(); i++) {
-					dataS.add(new Campaign()
-					.getInstance((JSONObject) dataObject.get(i)));
+					dataS.add( new Campaign().getInstance((JSONObject)dataObject.get(i)));
 				}
 				return response = "successful";
 			} catch (Exception ex) {
@@ -286,7 +282,7 @@ public class ListFragment extends Fragment {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			// adapter.addAll(dataS);
-			if (!TextUtils.isEmpty(result)) {
+			if (!TextUtils.isEmpty(result)&&result!=null) {
 				data.addAll(dataS);
 				Log.e("arraylist ", data.toString());
 				adapter.notifyDataSetChanged();

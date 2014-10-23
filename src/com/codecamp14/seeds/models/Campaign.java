@@ -1,5 +1,6 @@
 package com.codecamp14.seeds.models;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Campaign {
@@ -14,6 +15,7 @@ public class Campaign {
 		"total_donations": "0",
 		"total_donors": "0"
 		},*/
+	private static Campaign self=new Campaign();
 	protected int id;
 	protected String title;
 	protected String desc;
@@ -30,21 +32,22 @@ public class Campaign {
 	public void setImageUrl(String image) {
 		this.imageUrl = image;
 	}
-		 public Campaign(JSONObject json){
-			try{
-				this.id=json.getInt("id");
-				this.title=json.getString("title");
-				this.desc=json.getString("brief");
-				this.creator=json.getString("creator");
-				this.timeCreated=json.getString("created");
-				this.goal=json.getInt("goal");
-				this.goalDuration=json.getString("goal_duration");
-				this.totalDonations=json.getInt("total_donations");
-				this.totalDonors=json.getInt("total_donors");
-				this.imageUrl=json.getString("photos");
-				}catch(Exception m){
-					m.printStackTrace();
-				}
+		 public Campaign(){
+			
+		}
+		public static Campaign getInstance(JSONObject json) throws JSONException{
+			
+			self.id=json.getInt("id");
+			self.title=json.getString("title");
+			self.desc=json.getString("brief");
+			self.creator=json.getString("creator");
+			self.timeCreated=json.getString("created");
+			self.goal=json.getInt("goal");
+			self.goalDuration=json.getString("goal_duration");
+			self.totalDonations=json.getInt("total_donations");
+			self.totalDonors=json.getInt("total_donors");
+			self.imageUrl=json.getString("photos");
+			return self;
 			
 		}
 		public int getId() {
