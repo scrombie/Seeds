@@ -356,6 +356,7 @@ public class DetailsFragment extends Fragment {
 					switch (responseTest) {
 					case 0:
 						show = json.getString(TAG_MESSAGE);
+						Alert.showAlert(getActivity(), show, title);
 						break;
 					case 1:
 						show = json.getString(TAG_MESSAGE);
@@ -370,8 +371,9 @@ public class DetailsFragment extends Fragment {
 
 			} else {
 				show = "There was an error, Please try again";
+				Alert.showAlert(getActivity(), show, title);
 			}
-			Alert.showAlert(getActivity(), show, title);
+			
 			return res;
 		}
 
