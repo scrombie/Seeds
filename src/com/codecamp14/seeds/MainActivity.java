@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
 		*/
 		SharedPreferences shared=getSharedPreferences(PREFS_NAME, 0);
 		String apiKey=shared.getString("api_key", null);
-		Log.e("apikey in main activity",apiKey);
+		Log.e("apikey in main activity",String.valueOf(apiKey));
 		String name=shared.getString("name", null);
 		//if(currentUser == null){
 		if(TextUtils.isEmpty(apiKey)){
