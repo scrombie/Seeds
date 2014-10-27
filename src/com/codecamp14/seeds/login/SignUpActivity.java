@@ -105,7 +105,7 @@ public class SignUpActivity extends Activity {
 
 	private void onSuccess(JSONObject result) throws JSONException {
 		// TODO 
-		Alert.showAlert(getApplicationContext(), result.getString("message")+"\n Please login to continue", null);
+		Alert.showAlert(this, result.getString("message")+"\n Please login to continue", null);
 	}
 
 	@Override
