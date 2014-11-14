@@ -65,12 +65,8 @@ public class DetailsFragment extends Fragment {
 
 	
 
-	/* (non-Javadoc)
-	 * @see android.support.v4.app.Fragment#onCreate(android.os.Bundle)
-	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		prevI=getActivity().getIntent();
 		String json = "";
 		json = prevI.getExtras().containsKey("json") ?prevI.getStringExtra("json") : null;
@@ -78,12 +74,9 @@ public class DetailsFragment extends Fragment {
 				c=new Gson().fromJson(json, Campaign.class);
 		super.onCreate(savedInstanceState);
 	}
-	/* (non-Javadoc)
-	 * @see android.support.v4.app.Fragment#setHasOptionsMenu(boolean)
-	 */
+
 	@Override
 	public void setHasOptionsMenu(boolean hasMenu) {
-		// TODO Auto-generated method stub
 		super.setHasOptionsMenu(hasMenu);
 	}
 	
@@ -171,6 +164,16 @@ public class DetailsFragment extends Fragment {
 	}
 
 
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.Fragment#onResume()
+	 */
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		webView.reload();
+		super.onResume();
+		
+	}
 	/**
 	 * 
 	 * @param progress

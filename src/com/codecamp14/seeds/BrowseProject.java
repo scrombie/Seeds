@@ -60,7 +60,7 @@ public class BrowseProject extends Fragment {
 				Category category=(Category) parent.getItemAtPosition(position);
 				Fragment fragment=new ListFragment(UrlLink.getCategory(category.getId()));
 				Bundle b=new Bundle();
-				b.putString("title", category.getCategory());
+				b.putString("title", category.getName());
 				fragment.setArguments(b);
 				getFragmentManager().beginTransaction()
 				.replace(R.id.frame_container, fragment).commit();
@@ -113,7 +113,7 @@ public class BrowseProject extends Fragment {
 			Category homeAdd = home.get(position);
 			
 
-			browseText.setText(homeAdd.getCategory());
+			browseText.setText(homeAdd.getName());
 			browseCat.setText(homeAdd.getCatdesc());
 			return itemView;
 }

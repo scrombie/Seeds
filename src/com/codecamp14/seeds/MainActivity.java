@@ -189,7 +189,7 @@ public class MainActivity extends ActionBarActivity {
 		Fragment fragment = null;
 		switch (position) {
 		case 0:
-			fragment = new ListFragment(UrlLink.featured,Type.PUB);
+			fragment = new ListFragment(UrlLink.campaigns,Type.PUB);
 			break;
 		case 1:
 			fragment = new BrowseProject();

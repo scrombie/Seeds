@@ -50,7 +50,7 @@ public class CampaignAdapter extends ArrayAdapter<Campaign> {
 		//		totalDonation.setText(s.getTotalDonations());
 		//		goalDuration.setText(s.getGoalDuration());
 		TextView category=(TextView)convertView.findViewById(R.id.category);
-		category.setText(s.getCategory());
+		category.setText(s.getCategory().getName());
 		Picasso.with(ctx)
 		.load(s.getImageUrl())
 		.resize(50, 50)

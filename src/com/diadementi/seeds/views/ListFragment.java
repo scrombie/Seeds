@@ -33,6 +33,7 @@ import android.widget.ProgressBar;
 import com.codecamp.libs.RestClient;
 import com.codecamp.libs.RestClient.RequestMethod;
 import com.codecamp14.seeds.R;
+import com.codecamp14.seeds.login.LoginActivity;
 import com.diadementi.seeds.helpers.Alert;
 import com.diadementi.seeds.helpers.CampaignAdapter;
 import com.diadementi.seeds.helpers.UrlLink;
@@ -65,7 +66,7 @@ public class ListFragment extends Fragment {
 	 */
 	ListFragment(){
 
-		this(UrlLink.Campaigns);
+		this(UrlLink.campaigns);
 
 	}
 	public ListFragment(String url) {
@@ -143,6 +144,14 @@ public class ListFragment extends Fragment {
 		makeRequest(url);
 		return rootView;
 
+	}
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.Fragment#onResume()
+	 */
+	@Override
+	public void onResume() {
+		makeRequest(url);
+		super.onResume();
 	}
 	public boolean isNetworkAvailable() {
 		ConnectivityManager connectMan=(ConnectivityManager)getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -260,12 +269,18 @@ public class ListFragment extends Fragment {
 				dami.AddHeader("Authorization", apiKey);
 				Log.e("apikey",apiKey);
 				dami.Execute(RequestMethod.GET);
-
+				int code=dami.getResponseCode();
+				if(code==400||code==401){
+					Intent i=new Intent(getActivity(),LoginActivity.class);
+					i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+					startActivity(i);
+				};
 				text = dami.getResponse();
 				Log.i("json data", text);
 				JSONObject mainObject = new JSONObject(text);
 				Log.i("json object", mainObject.toString());
-				int jsonresponse=mainObject.getInt("response");
+				//int jsonresponse=mainObject.getInt("response");
 				JSONArray dataObject = mainObject.getJSONArray("data");
 				Log.e("dataObject",dataObject.toString());
 				for (int i = 0; i < dataObject.length(); i++) {
@@ -283,9 +298,8 @@ public class ListFragment extends Fragment {
 			super.onPostExecute(result);
 			// adapter.addAll(dataS);
 			if (!TextUtils.isEmpty(result)&&result!=null) {
-				data.addAll(dataS);
+				adapter.refill(dataS);
 				Log.e("arraylist ", data.toString());
-				adapter.notifyDataSetChanged();
 			} else {
 				result = "Unable to Connect";
 				Alert.showAlert(getActivity(), result,null);

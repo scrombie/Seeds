@@ -28,6 +28,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +53,7 @@ public class CampaignFragment extends Fragment {
 	 * "2014-08-26 10:55:00", "goal_duration": "2014-09-04", "total_donations":
 	 * "0", "total_donors": "0" },
 	 */
-
+	Spinner spinner;
 	EditText inputName, inputAmount, numOfDays, inputArticle;
 	Button btnStartCampaign, imageload;
 	ProgressDialog pDialog;
@@ -71,7 +73,7 @@ public class CampaignFragment extends Fragment {
 	public static final String PREFS_NAME = "MyPrefsFile";
 	SharedPreferences shared;
 	String apiKey;
-
+	int categoryId;
 
 	public CampaignFragment() {
 		setHasOptionsMenu(true);
@@ -105,11 +107,15 @@ public class CampaignFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
+		if(mode==MODE.add){
+			getActivity().getActionBar().setTitle("Add Campaign");
+		}else{
+			getActivity().getActionBar().setTitle("Edit");
+		}
 		View rootView = inflater.inflate(R.layout.fragment_input, container,
 				false);
 
-		Spinner spinner = (Spinner) rootView.findViewById(R.id.categorySpinner);
+		spinner = (Spinner) rootView.findViewById(R.id.categorySpinner);
 
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 				getActivity(), R.array.spinner_array,
@@ -120,6 +126,26 @@ public class CampaignFragment extends Fragment {
 
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
+		int catId=1;
+		if (c.getCategory()!=null)
+			catId = c.getCategory().getId();
+		spinner.setSelection(catId-1);
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				categoryId=position+1;
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				// TODO Auto-generated method stub
+				categoryId=parent.getSelectedItemPosition()+1;
+				
+			}
+		});
 		// String json="";
 		// json=getActivity().getIntent().getExtras().containsKey("json")?getActivity().getIntent().getStringExtra("json"):null;
 		// c=!TextUtils.isEmpty(json)?new Gson().fromJson(json,
@@ -311,7 +337,8 @@ public class CampaignFragment extends Fragment {
 			client.AddParam("title", title);
 			client.AddParam("goal", amount);
 			client.AddParam("goal_duration", Integer.toString(days));
-			client.AddParam("category", Integer.toString(1));
+			client.AddParam("category", Integer.toString(categoryId));
+			Log.v("category",Integer.toString(categoryId));
 			client.AddParam("brief", article);
 			File image = new File(selectedPath1);
 			if (image.isFile()) {

@@ -2,6 +2,8 @@ package com.diadementi.seeds.models;
 
 import org.json.JSONObject;
 
+import com.codecamp14.seeds.models.Category;
+
 public class Campaign {
 	/*{
 		"id": "1",
@@ -24,7 +26,7 @@ public class Campaign {
 	protected int totalDonations;
 	protected int totalDonors;
 	protected String imageUrl;
-	protected String category;
+	protected Category category;
 		public String getImageUrl() {
 		return imageUrl;
 	}
@@ -51,7 +53,8 @@ public class Campaign {
 				this.totalDonations=json.getInt("total_donations");
 				this.totalDonors=json.getInt("total_donors");
 				this.imageUrl=json.getString("photos");
-				this.category=json.getString("category");
+				JSONObject cat=json.getJSONObject("category");
+				this.category=new Category(cat.getInt("id"),cat.getString("name"));
 				return this;
 				}catch(Exception m){
 					m.printStackTrace();
@@ -113,7 +116,7 @@ public class Campaign {
 		public void setTotalDonors(int totalDonors) {
 			this.totalDonors = totalDonors;
 		}
-		public CharSequence getCategory() {
+		public Category getCategory() {
 			return category;
 		}
 		

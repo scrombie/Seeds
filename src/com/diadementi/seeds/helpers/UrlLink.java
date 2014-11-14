@@ -13,6 +13,7 @@ public  class UrlLink {
 	public static final String register="http://seeds.diadementi.com/v2/register";
 	public static final String login="http://seeds.diadementi.com/v2/login";
 	public static final String usersCampaign="http://seeds.diadementi.com/v2/mycampaign";
+	public static final String donate ="http://seeds.diadementi.com/v2/donation" ;
 
 	public static String getCategory(int id) {
 		return category+id;
@@ -21,7 +22,7 @@ public  class UrlLink {
 		return campaign+id;
 	}
 	public static String getCampaignView(int id){
-		return "http://192.168.56.1/seeds3/v2/mcampaign/"+id;
+		return "http://seeds.diadementi.com/v2/mcampaign/"+id;
 	}
 
 	public static String update(int id){

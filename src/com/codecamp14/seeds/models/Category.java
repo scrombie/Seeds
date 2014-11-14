@@ -2,7 +2,7 @@ package com.codecamp14.seeds.models;
 
 public class Category {
 	private int id;
-	String category;
+	String Name;
 	String catdesc;
 	
 	
@@ -10,8 +10,11 @@ public class Category {
 	public Category(int id,String category, String catdesc) {
 		super();
 		this.setId(id);
-		this.category = category;
+		this.Name = category;
 		this.catdesc = catdesc;
+	}
+	public Category(int id,String category){
+		this(id,category,"");
 	}
 	/**
 	 * @return the id
@@ -25,14 +28,14 @@ public class Category {
 	private void setId(int id) {
 		this.id = id;
 	}
-	public String getCategory() {
-		return category;
+	public String getName() {
+		return Name;
 	}
 	public String getCatdesc() {
 		return catdesc;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setName(String category) {
+		this.Name = category;
 	}
 	public void setCatdesc(String catdesc) {
 		this.catdesc = catdesc;

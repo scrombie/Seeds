@@ -1,14 +1,11 @@
 package com.codecamp14.seeds.login;
 
-import java.util.Arrays;
-
 import org.apache.http.HttpStatus;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,13 +18,9 @@ import android.widget.Toast;
 
 import com.codecamp.libs.RestClient;
 import com.codecamp.libs.RestClient.RequestMethod;
-import com.codecamp14.seeds.MainActivity;
 import com.codecamp14.seeds.R;
 import com.diadementi.seeds.helpers.Alert;
 import com.diadementi.seeds.helpers.UrlLink;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SignUpCallback;
 
 public class SignUpActivity extends Activity {
 
