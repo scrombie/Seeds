@@ -11,7 +11,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <!-- Title Label -->
@@ -22,7 +22,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="Title"
                 android:textColor="@color/text_campaign"
-                android:textSize="17dip" />
+                android:textSize="17sp" />
 
             <!-- Input Name -->
 
@@ -42,7 +42,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="Funding Goal"
                 android:textColor="@color/text_campaign"
-                android:textSize="17dip" />
+                android:textSize="17sp" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -74,13 +74,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Funding Duration"
+
+                android:text="@string/funding_duration"
                 android:textColor="@color/text_campaign"
-                android:textSize="17dip" />
+                android:textSize="17sp" />
+
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal"
                 android:weightSum="1" >
@@ -89,18 +91,20 @@
 
                 <TextView
                     android:id="@+id/signUP"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:text="Number of Days:" />
+                    android:layout_weight="0.5"
+
+                    android:text="@string/number_of_days_" />
+
 
                 <EditText
                     android:id="@+id/numOfDays"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.2"
+                    android:layout_weight="0.5"
                     android:ems="10"
-                    android:hint="Days"
+                    android:hint="@string/days"
                     android:inputType="number" >
 
                     <requestFocus />
@@ -114,7 +118,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="Category"
                 android:textColor="@color/text_campaign"
-                android:textSize="17dip" />
+
+                android:textSize="17sp" />
 
             <Spinner
                 android:id="@+id/categorySpinner"
@@ -124,11 +129,25 @@
                 android:layout_marginBottom="10dp" />
 
             <TextView
+
+                android:id="@+id/selectedPath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selected_path" />
+
+            <Button
+                android:id="@+id/imageload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_image" />
+
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Article"
+                android:text="@string/details"
                 android:textColor="@color/text_campaign"
-                android:textSize="17dip" />
+                android:textSize="17sp" />
+
 
             <!-- Input description -->
 
@@ -138,7 +157,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="top"
-                android:hint="Drop an Article for your Campaign"
+
+                android:hint="@string/drop_details_for_your_campaign"
+
                 android:lines="10" />
 
             <!-- Button Create Product -->
@@ -150,7 +171,9 @@
                 android:background="@color/list_background_pressed"
                 android:bottomLeftRadius="10dp"
                 android:bottomRightRadius="10dp"
-                android:text="Start Campaign"
+
+                android:text="@string/start_campaign"
+
                 android:topLeftRadius="10dp"
                 android:topRightRadius="10dp">
             </Button>
